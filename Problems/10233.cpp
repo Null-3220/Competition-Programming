@@ -1,15 +1,21 @@
 #include <iostream>
+#include <vector>
 #include <algorithm>
-#include <string>
 using namespace std;
 
 int main() {
-    string x;
-    cin >> x;
+    vector<int> a;
+    string b;
 
-    if (next_permutation(x.begin(), x.end())) {
+    cin >> b;
+
+    for (char s : b) {
+        a.push_back(s - '0');
+    }
+
+    next_permutation(a.begin(), a.end());
+
+    for (int x : a) {
         cout << x;
-    } else {
-        cout << 0;
     }
 }
